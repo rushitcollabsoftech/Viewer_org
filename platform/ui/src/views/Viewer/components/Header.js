@@ -27,7 +27,7 @@ const Header = () => {
             variant="text"
             color="inherit"
             className="text-primary-active"
-            onClick={() => {}}
+            onClick={() => { }}
           >
             <React.Fragment>
               <Icon name="settings" /> <Icon name="chevron-down" />
