@@ -181,10 +181,10 @@ const DataRow: React.FC<DataRowProps> = ({
   };
 
   return (
-    <div className={`flex flex-col ${isVisible ? '' : 'opacity-60'}`}>
+    <div className={`bgLight roundedBox flex flex-col ${isVisible ? '' : 'opacity-60'}`}>
       <div
-        className={`flex items-center ${
-          isSelected ? 'bg-popover' : 'bg-muted'
+        className={`roundedBox flex items-center ${
+          isSelected ? 'bg-popover' : 'bgLight'
         } group relative cursor-pointer`}
         onClick={onSelect}
         data-cy="data-row"
@@ -194,9 +194,9 @@ const DataRow: React.FC<DataRowProps> = ({
 
         {/* Number Box */}
         <div
-          className={`flex h-7 max-h-7 w-7 flex-shrink-0 items-center justify-center rounded-l border-r border-black text-base ${
-            isSelected ? 'bg-highlight text-black' : 'bg-muted text-muted-foreground'
-          } overflow-hidden`}
+          className={`flex h-7 max-h-7 w-7 flex-shrink-0 items-center justify-center rounded-l text-base ${
+            isSelected ? 'bg-highlight text-black' : 'iconDarkColor'
+          } iconDarkColor overflow-hidden`}
         >
           {number}
         </div>
@@ -217,7 +217,7 @@ const DataRow: React.FC<DataRowProps> = ({
             <Tooltip>
               <TooltipTrigger asChild>
                 <span
-                  className={`cursor-default text-base ${
+                  className={`iconDarkColor cursor-default text-base ${
                     isSelected ? 'text-highlight' : 'text-muted-foreground'
                   } [overflow:hidden] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]`}
                 >
@@ -233,7 +233,7 @@ const DataRow: React.FC<DataRowProps> = ({
             </Tooltip>
           ) : (
             <span
-              className={`text-base ${
+              className={`text-base iconDarkColor${
                 isSelected ? 'text-highlight' : 'text-muted-foreground'
               } [overflow:hidden] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]`}
             >
@@ -248,7 +248,7 @@ const DataRow: React.FC<DataRowProps> = ({
           <Button
             size="icon"
             variant="ghost"
-            className={`h-6 w-6 transition-opacity ${
+            className={`h-6 w-6 text-white transition-opacity ${
               isSelected || !isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
             }`}
             aria-label={isVisible ? 'Hide' : 'Show'}
@@ -269,7 +269,7 @@ const DataRow: React.FC<DataRowProps> = ({
               <Button
                 size="icon"
                 variant="ghost"
-                className={`h-6 w-6 transition-opacity ${
+                className={`h-6 w-6 text-white transition-opacity ${
                   isSelected || isDropdownOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                 }`}
                 aria-label="Actions"
@@ -309,10 +309,10 @@ const DataRow: React.FC<DataRowProps> = ({
       {/* Details Section */}
       {details && (details.primary?.length > 0 || details.secondary?.length > 0) && (
         <div className="ml-7 px-2 py-2">
-          <div className="text-secondary-foreground flex items-center gap-1 text-base leading-normal">
+          <div className="text-secondary-foreground iconDarkColor flex items-center gap-1 text-base leading-normal">
             {details.primary?.length > 0 && renderDetails(details.primary)}
             {details.secondary?.length > 0 && (
-              <div className="text-muted-foreground ml-auto text-sm">
+              <div className="iconDarkColor ml-auto text-sm">
                 {renderDetails(details.secondary)}
               </div>
             )}

@@ -99,8 +99,8 @@ const getTabStyle = (numTabs: number) => {
 };
 
 const getTabIconClassNames = (numTabs: number, isActiveTab: boolean) => {
-  return classnames('h-full w-full flex items-center justify-center', {
-    'bg-customblue-40': isActiveTab,
+  return classnames('h-full w-full flex items-center justify-center activeToggle', {
+    activeToggleBtn: isActiveTab,
     rounded: isActiveTab,
   });
 };
@@ -259,7 +259,7 @@ const SidePanel = ({
     return (
       <div
         className={classnames(
-          'absolute flex cursor-pointer items-center justify-center',
+          'sidebarCloseIcon absolute flex cursor-pointer items-center justify-center',
           side === 'left' ? 'right-0' : 'left-0'
         )}
         style={{ width: `${closeIconWidth}px` }}
@@ -282,7 +282,7 @@ const SidePanel = ({
       <>
         {getCloseIcon()}
         <div className={classnames('flex grow justify-center')}>
-          <div className={classnames('bg-primary-dark text-primary-active flex flex-wrap')}>
+          <div className={classnames('text-primary-active flex flex-wrap')}>
             {tabs.map((tab, tabIndex) => {
               const { disabled } = tab;
               return (
@@ -294,7 +294,7 @@ const SidePanel = ({
                         tabSpacerWidth
                       )}
                     >
-                      <div className="bg-primary-dark h-[20px] w-full"></div>
+                      {/* <div className="h-[20px] w-full"></div> */}
                     </div>
                   )}
                   <Tooltip key={tabIndex}>
@@ -352,7 +352,7 @@ const SidePanel = ({
         onClick={() => updatePanelOpen(!panelOpen)}
       >
         {getCloseIcon()}
-        <span>{tabs[0].label}</span>
+        <span className="cTitleText">{tabs[0].label}</span>
       </div>
     );
   };

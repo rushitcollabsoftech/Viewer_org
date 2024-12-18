@@ -50,7 +50,7 @@ export function StudyBrowserSort({ servicesManager }: withAppTypes) {
   return (
     <div className="flex items-center gap-1">
       <DropdownMenu>
-        <DropdownMenuTrigger className="border-inputfield-main focus:border-inputfield-main flex h-[26px] w-[125px] items-center justify-start rounded border bg-black p-2 text-base text-white">
+        <DropdownMenuTrigger className="border-inputfield-main focus:border-inputfield-main iconDarkColor flex h-[26px] w-[125px] items-center justify-start rounded border bg-black p-2 text-base">
           {selectedSort.label}
         </DropdownMenuTrigger>
         <DropdownMenuContent className="bg-black">
@@ -67,12 +67,12 @@ export function StudyBrowserSort({ servicesManager }: withAppTypes) {
       </DropdownMenu>
       <button
         onClick={toggleSortDirection}
-        className="flex h-[26px] items-center justify-center bg-black"
+        className="flex h-[26px] items-center justify-center"
       >
         {sortDirection === 'ascending' ? (
-          <Icons.SortingAscending className="text-primary-main w-2" />
+          <Icons.SortingAscending className="iconDarkColor w-2" />
         ) : (
-          <Icons.SortingDescending className="text-primary-main w-2" />
+          <Icons.SortingDescending className="iconDarkColor w-2" />
         )}
       </button>
     </div>

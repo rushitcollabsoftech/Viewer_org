@@ -251,5 +251,115 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 input[type='number'] {
-  -moz-appearance: textfield; /* For Firefox */
+  -moz-appearance: textfield;
+  /* For Firefox */
+}
+
+/* CSS added by Rushit Patel */
+.darkColorWithGradient {
+  background: linear-gradient(#0a586c, #016f8b) !important;
+}
+
+.bg-secondary-dark {
+  background: linear-gradient(#0a586c, #016f8b) !important;
+}
+
+.bg-customblue-400 {
+  background: #C7D9DD !important;
+}
+
+.bg-bkg-med,
+.bg-bkg-low {
+  background: #C7D9DD !important;
+}
+
+.bg-popover {
+  background: #C7D9DD !important;
+}
+
+.bgLight {
+  background: #C7D9DD !important;
+}
+
+.leftSideBarBtnBox {
+  background: #C7D9DD !important;
+}
+
+.allButtonGradient {
+  background: linear-gradient(#0a586c, #016f8b) !important;
+}
+
+.bg-black {
+  background: #ffffff !important;
+}
+
+.cTitleText {
+  color: #0a586c !important;
+  text-transform: uppercase !important;
+  font-size: 1rem !important;
+  font-weight: bold !important;
+}
+
+.text-primary-active {
+  color: white !important;
+}
+
+.sidebarCloseIcon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#0a586c, #016f8b) !important;
+}
+
+.iconDarkColor {
+  color: #016f8b !important;
+}
+
+.bg-popover {
+  background: linear-gradient(#0a586c, #016f8b) !important;
+}
+
+.studyBox {
+  background: #9eccd6 !important;
+  border-radius: .2rem !important;
+}
+
+.activeStudyBox {
+  background: #396c78 !important;
+}
+
+.text-muted-foreground {
+  color: white !important;
+}
+
+.toggleBtnIcon button {
+  color: #016f8b !important;
+}
+
+.activeToggle svg {
+  color: #016f8b !important;
+}
+
+.activeToggleBtn {
+  color: white !important;
+  background: linear-gradient(#0a586c, #016f8b) !important;
+}
+
+.activeToggleBtn svg {
+  color: white !important;
+}
+
+.roundedBox {
+  border-radius: .3rem;
+}
+
+.css-13cymwt-control {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.textBlack {
+  color: #000000 !important;
 }

@@ -155,7 +155,7 @@ export default function getToolbarModule({ commandsManager, servicesManager }: w
       name: 'evaluate.action',
       evaluate: ({ viewportId, button }) => {
         return {
-          className: '!text-common-bright hover:!bg-primary-dark hover:text-primary-light',
+          className: '!text-common-bright hover:!bg-primary-light hover:text-primary-light',
         };
       },
     },

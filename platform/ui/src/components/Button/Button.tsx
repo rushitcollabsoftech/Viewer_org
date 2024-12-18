@@ -10,7 +10,7 @@ const sizeClasses = {
 };
 
 const layoutClasses =
-  'box-content inline-flex flex-row items-center justify-center gap-[5px] justify center px-[10px] outline-none rounded';
+  'box-content inline-flex flex-row items-center justify-center gap-[5px] justify center px-[10px] outline-none rounded allButtonGradient';
 
 const baseFontTextClasses = 'leading-[1.2] font-sans text-center whitespace-nowrap';
 

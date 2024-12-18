@@ -101,12 +101,12 @@ function PanelMeasurementTableTracking({
           }
 
           return (
-            <div className="bg-background flex h-9 w-full items-center rounded pr-0.5">
+            <div className="bgLight flex h-9 w-full items-center rounded pr-0.5">
               <div className="flex space-x-1">
                 <Button
                   size="sm"
                   variant="ghost"
-                  className="pl-1.5"
+                  className="iconDarkColor pl-1.5"
                   onClick={() => {
                     const measurements = measurementService.getMeasurements();
                     const trackedMeasurements = measurements.filter(
@@ -124,7 +124,7 @@ function PanelMeasurementTableTracking({
                 <Button
                   size="sm"
                   variant="ghost"
-                  className="pl-0.5"
+                  className="iconDarkColor pl-0.5"
                   onClick={() => {
                     sendTrackedMeasurementsEvent('SAVE_REPORT', {
                       viewportId: viewportGrid.activeViewportId,
@@ -138,7 +138,7 @@ function PanelMeasurementTableTracking({
                 <Button
                   size="sm"
                   variant="ghost"
-                  className="pl-0.5"
+                  className="iconDarkColor pl-0.5"
                   onClick={() => {
                     measurementService.clearMeasurements();
                   }}

@@ -75,7 +75,7 @@ const HotkeysPreferences = ({
                         <Typography
                           variant="subtitle"
                           className={classNames(
-                            'text-primary-light w-full pr-6 text-right',
+                            'text-primary-light textBlack w-full pr-6 text-right',
                             !isFirst && 'hidden'
                           )}
                         >
@@ -84,7 +84,7 @@ const HotkeysPreferences = ({
                         <Typography
                           variant="subtitle"
                           className={classNames(
-                            'flex h-full flex-row items-center whitespace-nowrap pr-6',
+                            'iconDarkColor flex h-full flex-row items-center whitespace-nowrap pr-6',
                             isFirst && 'mt-5'
                           )}
                         >
@@ -95,7 +95,7 @@ const HotkeysPreferences = ({
                         <Typography
                           variant="subtitle"
                           className={classNames(
-                            'text-primary-light pr-6 pl-0 text-left',
+                            'text-primary-light textBlack pr-6 pl-0 text-left',
                             !isFirst && 'hidden'
                           )}
                         >
@@ -108,7 +108,7 @@ const HotkeysPreferences = ({
                             modifierKeys={MODIFIER_KEYS}
                             onChange={onChangeHandler}
                             hotkeys={hotkeysModule}
-                            className="h-8 text-lg"
+                            className="textBlack h-8 text-lg"
                           />
                           {error && (
                             <span className="p-2 text-left text-sm text-red-600">{error}</span>

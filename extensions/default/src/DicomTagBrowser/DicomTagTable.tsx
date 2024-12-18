@@ -124,7 +124,7 @@ function DicomTagTable({ rows }) {
         <div
           style={{ ...style, ...rowStyle }}
           className={classNames(
-            'hover:bg-secondary-main border-secondary-light flex w-full flex-row items-center break-all bg-black text-base transition duration-300',
+            'hover:bg-secondary-main border-secondary-light iconDarkColor flex w-full flex-row items-center break-all bg-black text-base transition duration-300',
             lineHeightClassName
           )}
           key={`DICOMTagRow-${index}`}

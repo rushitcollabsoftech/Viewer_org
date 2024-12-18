@@ -69,8 +69,8 @@ const UserPreferences = ({
       <div className="mb-2 border-b-2 border-black">
         <Typography
           variant="inherit"
-          color="primaryLight"
-          className="flex pb-2 text-[16px] font-semibold !leading-[1.2]"
+          color=""
+          className="iconDarkColor flex pb-2 text-[16px] font-semibold !leading-[1.2]"
         >
           {title}
         </Typography>
@@ -85,7 +85,7 @@ const UserPreferences = ({
         <div className="flex w-72 flex-row items-center justify-center">
           <Typography
             variant="subtitle"
-            className="mr-5 h-full text-right"
+            className="iconDarkColor mr-5 h-full text-right"
           >
             {t('Language')}
           </Typography>
