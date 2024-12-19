@@ -262,7 +262,10 @@ const ViewportDownloadForm = ({
 
   return (
     <div>
-      <Typography variant="h6">
+      <Typography
+        variant="h6"
+        className="iconDarkColor"
+      >
         {t('Please specify the dimensions, filename, and desired type for the output image.')}
       </Typography>
 
@@ -272,7 +275,8 @@ const ViewportDownloadForm = ({
             data-cy="file-name"
             value={filename}
             onChange={evt => setFilename(evt.target.value)}
-            label={t('File Name')}
+            label={<span className="iconDarkColor">{t('File Name')}</span>}
+            className="iconDarkColor"
           />
           {renderErrorHandler('filename')}
         </div>
@@ -284,10 +288,11 @@ const ViewportDownloadForm = ({
                   type="number"
                   min={minimumSize}
                   max={maximumSize}
-                  label={t('Image width (px)')}
+                  label={<span className="iconDarkColor">{t('Image width (px)')}</span>}
                   value={dimensions.width}
                   onChange={evt => onDimensionsChange(evt.target.value, 'width')}
                   data-cy="image-width"
+                  className="iconDarkColor"
                 />
                 {renderErrorHandler('width')}
               </div>
@@ -296,10 +301,11 @@ const ViewportDownloadForm = ({
                   type="number"
                   min={minimumSize}
                   max={maximumSize}
-                  label={t('Image height (px)')}
+                  label={<span className="iconDarkColor">{t('Image height (px)')}</span>}
                   value={dimensions.height}
                   onChange={evt => onDimensionsChange(evt.target.value, 'height')}
                   data-cy="image-height"
+                  className="iconDarkColor"
                 />
                 {renderErrorHandler('height')}
               </div>
@@ -314,6 +320,7 @@ const ViewportDownloadForm = ({
                   onClick={onKeepAspectToggle}
                   size="small"
                   rounded="full"
+                  className="iconDarkColor"
                 >
                   <Icon name={keepAspect ? 'link' : 'unlink'} />
                 </IconButton>
@@ -328,9 +335,10 @@ const ViewportDownloadForm = ({
                 label={t('File Type')}
                 isSortable={false}
                 onLabelClick={() => {}}
+                className="iconDarkColor"
               >
                 <Select
-                  className="mt-2 text-white"
+                  className="iconDarkColor mt-2"
                   isClearable={false}
                   value={fileType}
                   data-cy="file-type"
@@ -356,32 +364,10 @@ const ViewportDownloadForm = ({
                   checked={showAnnotations}
                   onChange={event => setShowAnnotations(event.target.checked)}
                 />
-                <Typography>{t('Show Annotations')}</Typography>
+                <Typography className="iconDarkColor">{t('Show Annotations')}</Typography>
               </label>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="mt-8">
-        <div
-          className="bg-secondary-dark border-secondary-primary w-max-content min-w-full rounded p-4"
-          data-cy="image-preview"
-        >
-          <Typography variant="h5">{t('Image preview')}</Typography>
-          {activeViewportElement && (
-            <div
-              className="mx-auto my-2"
-              style={{
-                height: viewportElementDimensions.height,
-                width: viewportElementDimensions.width,
-              }}
-              ref={ref => setViewportElement(ref)}
-            ></div>
-          )}
-          {!activeViewportElement && (
-            <Typography className="mt-4">{t('Active viewport has no displayed image')}</Typography>
-          )}
         </div>
       </div>
 
@@ -402,6 +388,28 @@ const ViewportDownloadForm = ({
         >
           {t('Download')}
         </Button>
+      </div>
+
+      <div className="mt-4">
+        <div
+          className="bg-secondary-dark border-secondary-primary w-max-content min-w-full rounded p-4"
+          data-cy="image-preview"
+        >
+          <Typography variant="h5">{t('Image preview')}</Typography>
+          {activeViewportElement && (
+            <div
+              className="mx-auto my-2"
+              style={{
+                height: viewportElementDimensions.height,
+                width: viewportElementDimensions.width,
+              }}
+              ref={ref => setViewportElement(ref)}
+            ></div>
+          )}
+          {!activeViewportElement && (
+            <Typography className="mt-4">{t('Active viewport has no displayed image')}</Typography>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -2,9 +2,9 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { vec3 } from 'gl-matrix';
 import PropTypes from 'prop-types';
 import { metaData, Enums, utilities } from '@cornerstonejs/core';
-import type { ImageSliceData } from '@cornerstonejs/core/types';
+import { ImageSliceData } from '@cornerstonejs/core/dist/esm/types';
 import { ViewportOverlay } from '@ohif/ui';
-import type { InstanceMetadata } from '@ohif/core/src/types';
+import { InstanceMetadata } from '@ohif/core/src/types';
 import { formatPN, formatDICOMDate, formatDICOMTime, formatNumberPrecision } from './utils';
 import { StackViewportData, VolumeViewportData } from '../../types/CornerstoneCacheService';
 
@@ -55,6 +55,50 @@ const studyDateItem = {
     formatDate(referenceInstance.StudyDate),
 };
 
+const PatientNameItem = {
+  id: 'PatientName',
+  customizationType: 'ohif.overlayItem',
+  label: '',
+  title: 'Patient Name',
+  condition: ({ referenceInstance }) => {
+    return referenceInstance && referenceInstance?.PatientName?.[0]?.['Alphabetic'];
+  },
+  contentF: ({ referenceInstance }) => referenceInstance?.PatientName?.[0]?.['Alphabetic'],
+};
+
+const PatientIDItem = {
+  id: 'PatientID',
+  customizationType: 'ohif.overlayItem',
+  label: '',
+  title: 'Patient ID',
+  condition: ({ referenceInstance }) => {
+    return referenceInstance && referenceInstance?.PatientID;
+  },
+  contentF: ({ referenceInstance }) => referenceInstance?.PatientID,
+};
+
+const PatientSexItem = {
+  id: 'PatientSex',
+  customizationType: 'ohif.overlayItem',
+  label: '',
+  title: 'Patient Sex',
+  condition: ({ referenceInstance }) => {
+    return referenceInstance && referenceInstance?.PatientSex;
+  },
+  contentF: ({ referenceInstance }) => referenceInstance?.PatientSex,
+};
+
+const InstitutionNameItem = {
+  id: 'InstitutionName',
+  customizationType: 'ohif.overlayItem',
+  label: '',
+  title: 'Institution Name',
+  condition: ({ referenceInstance }) => {
+    return referenceInstance && referenceInstance?.InstitutionName;
+  },
+  contentF: ({ referenceInstance }) => referenceInstance?.InstitutionName,
+};
+
 const seriesDescriptionItem = {
   id: 'SeriesDescription',
   customizationType: 'ohif.overlayItem',
@@ -66,12 +110,50 @@ const seriesDescriptionItem = {
   contentF: ({ referenceInstance }) => referenceInstance.SeriesDescription,
 };
 
-const topLeftItems = {
-  id: 'cornerstoneOverlayTopLeft',
-  items: [studyDateItem, seriesDescriptionItem],
+const StudyDescriptionItem = {
+  id: 'StudyDescription',
+  customizationType: 'ohif.overlayItem',
+  label: '',
+  title: 'Series description',
+  condition: ({ referenceInstance }) => {
+    return referenceInstance && referenceInstance.StudyDescription;
+  },
+  contentF: ({ referenceInstance }) => referenceInstance.StudyDescription,
 };
 
-const topRightItems = { id: 'cornerstoneOverlayTopRight', items: [] };
+const DistanceSourceToDetectorItem = {
+  id: 'DistanceSourceToDetector',
+  customizationType: 'ohif.overlayItem',
+  label: '',
+  title: 'DistanceSourceToDetector',
+  condition: ({ referenceInstance }) => {
+    return referenceInstance && referenceInstance.DistanceSourceToDetector;
+  },
+  contentF: ({ referenceInstance }) => referenceInstance.DistanceSourceToDetector,
+};
+
+const topLeftItems = {
+  id: 'cornerstoneOverlayTopLeft',
+  items: [
+    {
+      id: 'InstanceNumber',
+      customizationType: 'ohif.overlayItem.instanceNumber',
+    },
+  ],
+};
+
+const topRightItems = {
+  id: 'cornerstoneOverlayTopRight',
+  items: [
+    PatientNameItem,
+    PatientIDItem,
+    PatientSexItem,
+    InstitutionNameItem,
+    DistanceSourceToDetectorItem,
+    StudyDescriptionItem,
+    seriesDescriptionItem,
+  ],
+};
 
 const bottomLeftItems = {
   id: 'cornerstoneOverlayBottomLeft',
@@ -94,10 +176,11 @@ const bottomLeftItems = {
 const bottomRightItems = {
   id: 'cornerstoneOverlayBottomRight',
   items: [
-    {
-      id: 'InstanceNumber',
-      customizationType: 'ohif.overlayItem.instanceNumber',
-    },
+    studyDateItem,
+    // {
+    //   id: 'InstanceNumber',
+    //   customizationType: 'ohif.overlayItem.instanceNumber',
+    // },
   ],
 };
 
@@ -180,7 +263,7 @@ function CustomizableViewportOverlay({
     return {
       displaySets,
       displaySet,
-      instance: instances?.[imageIndex],
+      instance: instances[imageIndex],
       instances,
       referenceInstance,
     };
@@ -403,11 +486,6 @@ function _getInstanceNumberFromVolume(
 
   // Todo: support fusion of acquisition plane which has instanceNumber
   const { volume } = volumes[0];
-
-  if (!volume) {
-    return;
-  }
-
   const { direction, imageIds } = volume;
 
   const cornerstoneViewport = cornerstoneViewportService.getCornerstoneViewport(viewportId);
@@ -471,10 +549,10 @@ function VOIOverlayItem({ voi, customization }: OverlayItemProps) {
       className="overlay-item flex flex-row"
       style={{ color: customization?.color }}
     >
-      <span className="mr-1 shrink-0">W:</span>
-      <span className="ml-1 mr-2 shrink-0">{windowWidth.toFixed(0)}</span>
-      <span className="mr-1 shrink-0">L:</span>
-      <span className="ml-1 shrink-0">{windowCenter.toFixed(0)}</span>
+      <span className="mr-1 shrink-0">WL:</span>
+      <span className="ml-1 mr-2 shrink-0">{windowCenter.toFixed(0)}</span>
+      <span className="mr-1 shrink-0">WW:</span>
+      <span className="ml-1 shrink-0">{windowWidth.toFixed(0)}</span>
     </div>
   );
 }
@@ -512,7 +590,7 @@ function InstanceNumberOverlayItem({
       <span>
         {instanceNumber !== undefined && instanceNumber !== null ? (
           <>
-            <span className="mr-1 shrink-0">I:</span>
+            <span className="mr-1 shrink-0">Im:</span>
             <span>{`${instanceNumber} (${imageIndex + 1}/${numberOfSlices})`}</span>
           </>
         ) : (

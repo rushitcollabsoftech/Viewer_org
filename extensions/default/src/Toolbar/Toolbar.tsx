@@ -31,7 +31,14 @@ export function Toolbar({ servicesManager, buttonSection = 'primary' }) {
           />
         );
 
-        return <div key={id}>{tool}</div>;
+        return (
+          <div
+            key={id}
+            className="headerBtnBox"
+          >
+            {tool}
+          </div>
+        );
       })}
     </>
   );

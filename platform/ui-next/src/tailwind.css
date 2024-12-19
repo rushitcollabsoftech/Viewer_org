@@ -318,6 +318,31 @@ input[type='number'] {
   color: #016f8b !important;
 }
 
+.iconLightDarkColor {
+  color: #9eccd6 !important;
+}
+
+.darkBorderColor {
+  border: .1rem solid #016f8b !important;
+}
+
+.darkStrokeColor {
+  stroke: #016f8b !important;
+}
+
+.tooltip.tooltip-bottom .tooltip-box::before {
+  height: .1rem !important;
+  background-color: #016f8b !important;
+}
+
+.bgDark {
+  background: #016f8b !important;
+}
+
+.bgLightDark {
+  background: #9eccd6 !important;
+}
+
 .bg-popover {
   background: linear-gradient(#0a586c, #016f8b) !important;
 }
@@ -362,4 +387,15 @@ input[type='number'] {
 
 .textBlack {
   color: #000000 !important;
+}
+
+.iconList>div>div>div {
+  width: 2rem !important;
+  height: 2rem !important;
+  padding: 0rem !important;
+}
+
+.iconList div div div button svg {
+  width: 1.2rem !important;
+  height: 1.2rem !important;
 }

@@ -13,110 +13,121 @@ export const setToolActiveToolbar = {
 };
 
 const toolbarButtons: Button[] = [
-  // {
-  //   id: 'MeasurementTools',
-  //   uiType: 'ohif.splitButton',
-  //   props: {
-  //     groupId: 'MeasurementTools',
-  //     // group evaluate to determine which item should move to the top
-  //     evaluate: 'evaluate.group.promoteToPrimaryIfCornerstoneToolNotActiveInTheList',
-  //     primary: createButton({
-  //       id: 'Length',
-  //       icon: 'tool-length',
-  //       label: 'Length',
-  //       tooltip: 'Length Tool',
-  //       commands: setToolActiveToolbar,
-  //       evaluate: 'evaluate.cornerstoneTool',
-  //     }),
-  //     secondary: {
-  //       icon: 'chevron-down',
-  //       tooltip: 'More Measure Tools',
-  //     },
-  //     items: [
-  //       createButton({
-  //         id: 'Length',
-  //         icon: 'tool-length',
-  //         label: 'Length',
-  //         tooltip: 'Length Tool',
-  //         commands: setToolActiveToolbar,
-  //         evaluate: 'evaluate.cornerstoneTool',
-  //       }),
-  //       createButton({
-  //         id: 'Bidirectional',
-  //         icon: 'tool-bidirectional',
-  //         label: 'Bidirectional',
-  //         tooltip: 'Bidirectional Tool',
-  //         commands: setToolActiveToolbar,
-  //         evaluate: 'evaluate.cornerstoneTool',
-  //       }),
-  //       createButton({
-  //         id: 'ArrowAnnotate',
-  //         icon: 'tool-annotate',
-  //         label: 'Annotation',
-  //         tooltip: 'Arrow Annotate',
-  //         commands: setToolActiveToolbar,
-  //         evaluate: 'evaluate.cornerstoneTool',
-  //       }),
-  //       createButton({
-  //         id: 'EllipticalROI',
-  //         icon: 'tool-ellipse',
-  //         label: 'Ellipse',
-  //         tooltip: 'Ellipse ROI',
-  //         commands: setToolActiveToolbar,
-  //         evaluate: 'evaluate.cornerstoneTool',
-  //       }),
-  //       createButton({
-  //         id: 'RectangleROI',
-  //         icon: 'tool-rectangle',
-  //         label: 'Rectangle',
-  //         tooltip: 'Rectangle ROI',
-  //         commands: setToolActiveToolbar,
-  //         evaluate: 'evaluate.cornerstoneTool',
-  //       }),
-  //       createButton({
-  //         id: 'CircleROI',
-  //         icon: 'tool-circle',
-  //         label: 'Circle',
-  //         tooltip: 'Circle Tool',
-  //         commands: setToolActiveToolbar,
-  //         evaluate: 'evaluate.cornerstoneTool',
-  //       }),
-  //       createButton({
-  //         id: 'PlanarFreehandROI',
-  //         icon: 'icon-tool-freehand-roi',
-  //         label: 'Freehand ROI',
-  //         tooltip: 'Freehand ROI',
-  //         commands: setToolActiveToolbar,
-  //         evaluate: 'evaluate.cornerstoneTool',
-  //       }),
-  //       createButton({
-  //         id: 'SplineROI',
-  //         icon: 'icon-tool-spline-roi',
-  //         label: 'Spline ROI',
-  //         tooltip: 'Spline ROI',
-  //         commands: setToolActiveToolbar,
-  //         evaluate: 'evaluate.cornerstoneTool',
-  //       }),
-  //       createButton({
-  //         id: 'LivewireContour',
-  //         icon: 'icon-tool-livewire',
-  //         label: 'Livewire tool',
-  //         tooltip: 'Livewire tool',
-  //         commands: setToolActiveToolbar,
-  //         evaluate: 'evaluate.cornerstoneTool',
-  //       }),
-  //     ],
-  //   },
-  // },
+  {
+    id: 'MeasurementTools',
+    uiType: 'ohif.splitButton',
+    props: {
+      groupId: 'MeasurementTools',
+      // group evaluate to determine which item should move to the top
+      evaluate: 'evaluate.group.promoteToPrimaryIfCornerstoneToolNotActiveInTheList',
+      primary: createButton({
+        id: 'Length',
+        icon: 'tool-length',
+        label: 'Length',
+        tooltip: 'Length Tool',
+        commands: setToolActiveToolbar,
+        evaluate: 'evaluate.cornerstoneTool',
+      }),
+      secondary: {
+        icon: 'chevron-down',
+        tooltip: 'More Measure Tools',
+      },
+      items: [
+        createButton({
+          id: 'Length',
+          icon: 'tool-length',
+          label: 'Length',
+          tooltip: 'Length Tool',
+          commands: setToolActiveToolbar,
+          evaluate: 'evaluate.cornerstoneTool',
+        }),
+        createButton({
+          id: 'Bidirectional',
+          icon: 'tool-bidirectional',
+          label: 'Bidirectional',
+          tooltip: 'Bidirectional Tool',
+          commands: setToolActiveToolbar,
+          evaluate: 'evaluate.cornerstoneTool',
+        }),
+        createButton({
+          id: 'ArrowAnnotate',
+          icon: 'tool-annotate',
+          label: 'Annotation',
+          tooltip: 'Arrow Annotate',
+          commands: setToolActiveToolbar,
+          evaluate: 'evaluate.cornerstoneTool',
+        }),
+        createButton({
+          id: 'EllipticalROI',
+          icon: 'tool-ellipse',
+          label: 'Ellipse',
+          tooltip: 'Ellipse ROI',
+          commands: setToolActiveToolbar,
+          evaluate: 'evaluate.cornerstoneTool',
+        }),
+        createButton({
+          id: 'RectangleROI',
+          icon: 'tool-rectangle',
+          label: 'Rectangle',
+          tooltip: 'Rectangle ROI',
+          commands: setToolActiveToolbar,
+          evaluate: 'evaluate.cornerstoneTool',
+        }),
+        createButton({
+          id: 'CircleROI',
+          icon: 'tool-circle',
+          label: 'Circle',
+          tooltip: 'Circle Tool',
+          commands: setToolActiveToolbar,
+          evaluate: 'evaluate.cornerstoneTool',
+        }),
+        createButton({
+          id: 'PlanarFreehandROI',
+          icon: 'icon-tool-freehand-roi',
+          label: 'Freehand ROI',
+          tooltip: 'Freehand ROI',
+          commands: setToolActiveToolbar,
+          evaluate: 'evaluate.cornerstoneTool',
+        }),
+        createButton({
+          id: 'SplineROI',
+          icon: 'icon-tool-spline-roi',
+          label: 'Spline ROI',
+          tooltip: 'Spline ROI',
+          commands: setToolActiveToolbar,
+          evaluate: 'evaluate.cornerstoneTool',
+        }),
+        createButton({
+          id: 'LivewireContour',
+          icon: 'icon-tool-livewire',
+          label: 'Livewire tool',
+          tooltip: 'Livewire tool',
+          commands: setToolActiveToolbar,
+          evaluate: 'evaluate.cornerstoneTool',
+        }),
+      ],
+    },
+  },
+  {
+    id: 'Zoom',
+    uiType: 'ohif.radioGroup',
+    props: {
+      icon: 'tool-zoom',
+      label: 'Zoom',
+      commands: setToolActiveToolbar,
+      evaluate: 'evaluate.cornerstoneTool',
+    },
+  },
+  // From CS added this code ============= END ===================
+  // From CS added this code ============= NEW START ===================
 
-  // updated by Rushit Patel
+  // From CS added this code ============= NEW END ===================
   {
     id: 'Length',
     uiType: 'ohif.radioGroup',
     props: {
       icon: 'tool-length',
       label: 'Length',
-      tooltip: 'Length Tool',
       commands: setToolActiveToolbar,
       evaluate: 'evaluate.cornerstoneTool',
     },
@@ -127,7 +138,6 @@ const toolbarButtons: Button[] = [
   //   props: {
   //     icon: 'tool-bidirectional',
   //     label: 'Bidirectional',
-  //     tooltip: 'Bidirectional Tool',
   //     commands: setToolActiveToolbar,
   //     evaluate: 'evaluate.cornerstoneTool',
   //   },
@@ -138,7 +148,6 @@ const toolbarButtons: Button[] = [
     props: {
       icon: 'tool-annotate',
       label: 'Annotation',
-      tooltip: 'Arrow Annotate',
       commands: setToolActiveToolbar,
       evaluate: 'evaluate.cornerstoneTool',
     },
@@ -149,7 +158,6 @@ const toolbarButtons: Button[] = [
     props: {
       icon: 'tool-ellipse',
       label: 'Ellipse',
-      tooltip: 'Ellipse ROI',
       commands: setToolActiveToolbar,
       evaluate: 'evaluate.cornerstoneTool',
     },
@@ -160,7 +168,6 @@ const toolbarButtons: Button[] = [
   //   props: {
   //     icon: 'tool-rectangle',
   //     label: 'Rectangle',
-  //     tooltip: 'Rectangle ROI',
   //     commands: setToolActiveToolbar,
   //     evaluate: 'evaluate.cornerstoneTool',
   //   },
@@ -171,7 +178,6 @@ const toolbarButtons: Button[] = [
     props: {
       icon: 'tool-circle',
       label: 'Circle',
-      tooltip: 'Circle Tool',
       commands: setToolActiveToolbar,
       evaluate: 'evaluate.cornerstoneTool',
     },
@@ -182,7 +188,6 @@ const toolbarButtons: Button[] = [
   //   props: {
   //     icon: 'icon-tool-freehand-roi',
   //     label: 'Freehand ROI',
-  //     tooltip: 'Freehand ROI',
   //     commands: setToolActiveToolbar,
   //     evaluate: 'evaluate.cornerstoneTool',
   //   },
@@ -193,7 +198,6 @@ const toolbarButtons: Button[] = [
   //   props: {
   //     icon: 'icon-tool-spline-roi',
   //     label: 'Spline ROI',
-  //     tooltip: 'Spline ROI',
   //     commands: setToolActiveToolbar,
   //     evaluate: 'evaluate.cornerstoneTool',
   //   },
@@ -204,7 +208,6 @@ const toolbarButtons: Button[] = [
   //   props: {
   //     icon: 'icon-tool-livewire',
   //     label: 'Livewire tool',
-  //     tooltip: 'Livewire tool',
   //     commands: setToolActiveToolbar,
   //     evaluate: 'evaluate.cornerstoneTool',
   //   },
@@ -229,17 +232,7 @@ const toolbarButtons: Button[] = [
       evaluate: 'evaluate.cornerstoneTool',
     },
   },
-  // ===============================
-  {
-    id: 'Zoom',
-    uiType: 'ohif.radioGroup',
-    props: {
-      icon: 'tool-zoom',
-      label: 'Zoom',
-      commands: setToolActiveToolbar,
-      evaluate: 'evaluate.cornerstoneTool',
-    },
-  },
+  // From CS added this code ============= END ===================
   // Window Level
   {
     id: 'WindowLevel',
@@ -248,13 +241,7 @@ const toolbarButtons: Button[] = [
       icon: 'tool-window-level',
       label: 'Window Level',
       commands: setToolActiveToolbar,
-      evaluate: [
-        'evaluate.cornerstoneTool',
-        {
-          name: 'evaluate.viewport.supported',
-          unsupportedViewportTypes: ['wholeSlide'],
-        },
-      ],
+      evaluate: 'evaluate.cornerstoneTool',
     },
   },
   // Pan...
@@ -290,13 +277,7 @@ const toolbarButtons: Button[] = [
       icon: 'tool-capture',
       label: 'Capture',
       commands: 'showDownloadViewportModal',
-      evaluate: [
-        'evaluate.action',
-        {
-          name: 'evaluate.viewport.supported',
-          unsupportedViewportTypes: ['video', 'wholeSlide'],
-        },
-      ],
+      evaluate: 'evaluate.action',
     },
   },
   {
