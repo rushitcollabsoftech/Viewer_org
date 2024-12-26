@@ -22,8 +22,13 @@ const getLoadButton = (onDrop, text, isDir) => {
             rounded="full"
             variant="contained" // outlined
             disabled={false}
-            endIcon={<Icon name="launch-arrow" />} // launch-arrow | launch-info
-            className={classnames('font-medium', 'ml-2')}
+            endIcon={
+              <Icon
+                name="launch-arrow"
+                className="textWhite"
+              />
+            } // launch-arrow | launch-info
+            className={classnames('bgLightDark iconDarkColor font-medium', 'ml-2')}
             onClick={() => {}}
           >
             {text}
@@ -123,13 +128,27 @@ function Local({ modePath }: LocalProps) {
           {...getRootProps()}
           style={{ width: '100%', height: '100%' }}
         >
-          <div className="flex h-screen w-screen items-center justify-center ">
+          <div className="flex h-screen w-screen items-center justify-center">
             <div className="bg-secondary-dark mx-auto space-y-2 rounded-lg py-8 px-8 drop-shadow-md">
               <div className="flex items-center justify-center">
-                <Icon
+                {/* <Icon
                   name="logo-dark-background"
                   className="h-28"
-                />
+                /> */}
+                <div
+                  style={{
+                    backgroundColor: 'white',
+                    padding: '.8rem',
+                    borderRadius: '100%',
+                  }}
+                >
+                  <img
+                    src="https://www.godigitel.online/assets/logo-DsTfn6Hy.png"
+                    style={{
+                      width: '6rem',
+                    }}
+                  />
+                </div>
               </div>
               <div className="space-y-2 pt-4 text-center">
                 {dropInitiated ? (
@@ -149,7 +168,7 @@ function Local({ modePath }: LocalProps) {
                   </div>
                 )}
               </div>
-              <div className="flex justify-around pt-4 ">
+              <div className="flex justify-around pt-4">
                 {getLoadButton(onDrop, 'Load files', false)}
                 {getLoadButton(onDrop, 'Load folders', true)}
               </div>

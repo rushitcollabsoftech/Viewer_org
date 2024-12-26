@@ -29,7 +29,7 @@ const StudyListExpandedRow = ({ seriesTableColumns, seriesTableDataSource, child
                   return (
                     <TableCell
                       key={cellKey}
-                      className="truncate"
+                      className="iconDarkColor truncate"
                     >
                       {content}
                     </TableCell>

@@ -293,6 +293,10 @@ input[type='number'] {
   background: #ffffff !important;
 }
 
+.textWhite {
+  color: #ffffff !important;
+}
+
 .cTitleText {
   color: #0a586c !important;
   text-transform: uppercase !important;
@@ -341,6 +345,14 @@ input[type='number'] {
 
 .bgLightDark {
   background: #9eccd6 !important;
+}
+
+.border-light {
+  border-color: #9eccd6 !important;
+}
+
+.border-dark {
+  border-color: #016f8b !important;
 }
 
 .bg-popover {
