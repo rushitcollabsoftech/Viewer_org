@@ -118,7 +118,7 @@ function ViewerLayout({
         appConfig={appConfig}
       />
       <div
-        className="relative flex w-full flex-row flex-nowrap items-stretch overflow-hidden bg-black"
+        className="mainBgColor relative flex w-full flex-row flex-nowrap items-stretch overflow-hidden"
         style={{ height: 'calc(100vh - 52px' }}
       >
         <React.Fragment>

@@ -46,7 +46,9 @@ function PanelStudyBrowserHeader({
                     value={viewPreset.id}
                     className="text-actions-primary"
                   >
-                    {React.createElement(Icons[viewPreset.iconName] || Icons.MissingIcon)}
+                    {React.createElement(Icons[viewPreset.iconName] || Icons.MissingIcon, {
+                      className: 'textWhite',
+                    })}
                   </ToggleGroupItem>
                 ))}
               </ToggleGroup>

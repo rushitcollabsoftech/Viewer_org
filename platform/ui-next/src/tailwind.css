@@ -203,9 +203,6 @@
 }
 
 */
-
-/* Updated Playground page styles */
-
 @layer base {
   html {
     font-family: 'Inter', sans-serif;
@@ -256,12 +253,18 @@ input[type='number'] {
 }
 
 /* CSS added by Rushit Patel */
+
+.mainBgColor {
+  background: #01303D !important;
+}
+
 .darkColorWithGradient {
   background: linear-gradient(#0a586c, #016f8b) !important;
 }
 
 .bg-secondary-dark {
-  background: linear-gradient(#0a586c, #016f8b) !important;
+  /* background: linear-gradient(#0a586c, #016f8b) !important; */
+  background: #004152 !important;
 }
 
 .bg-customblue-400 {
@@ -270,7 +273,11 @@ input[type='number'] {
 
 .bg-bkg-med,
 .bg-bkg-low {
-  background: #C7D9DD !important;
+  background: #004152 !important;
+}
+
+.sidebarBgDarkColor {
+  background: #01303D !important;
 }
 
 .bg-popover {
@@ -282,7 +289,7 @@ input[type='number'] {
 }
 
 .leftSideBarBtnBox {
-  background: #C7D9DD !important;
+  background: #004152 !important;
 }
 
 .allButtonGradient {
@@ -298,7 +305,8 @@ input[type='number'] {
 }
 
 .cTitleText {
-  color: #0a586c !important;
+  width: 100% !important;
+  color: #ffffff !important;
   text-transform: uppercase !important;
   font-size: 1rem !important;
   font-weight: bold !important;
@@ -308,6 +316,10 @@ input[type='number'] {
   color: white !important;
 }
 
+.text-primary-active-dark {
+  color: #004152 !important;
+}
+
 .sidebarCloseIcon {
   width: 2rem;
   height: 2rem;
@@ -315,11 +327,11 @@ input[type='number'] {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(#0a586c, #016f8b) !important;
+  background: #ffffff !important;
 }
 
 .iconDarkColor {
-  color: #016f8b !important;
+  color: #ffffff !important;
 }
 
 .iconLightDarkColor {
@@ -365,7 +377,7 @@ input[type='number'] {
 }
 
 .activeStudyBox {
-  background: #396c78 !important;
+  background: #004152 !important;
 }
 
 .text-muted-foreground {
@@ -382,7 +394,7 @@ input[type='number'] {
 
 .activeToggleBtn {
   color: white !important;
-  background: linear-gradient(#0a586c, #016f8b) !important;
+  background: #004152 !important;
 }
 
 .activeToggleBtn svg {
@@ -410,4 +422,19 @@ input[type='number'] {
 .iconList div div div button svg {
   width: 1.2rem !important;
   height: 1.2rem !important;
+}
+
+.sidebarActiveTab {
+  background: #004152 !important;
+}
+
+.sidebarActiveTab span {
+  color: white !important;
+}
+
+.darkBgForBtns {
+  height: fit-content !important;
+  background: #01303D !important;
+  padding: .2rem .2rem .1rem .2rem !important;
+  border-radius: .2rem !important;
 }

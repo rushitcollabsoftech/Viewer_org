@@ -71,7 +71,7 @@ const StudyBrowser = ({
 
   return (
     <div
-      className="ohif-scrollbar invisible-scrollbar bg-bkg-low flex flex-1 flex-col gap-[4px] overflow-auto"
+      className="ohif-scrollbar invisible-scrollbar sidebarBgDarkColor flex flex-1 flex-col gap-[4px] overflow-auto"
       data-cy={'studyBrowser-panel'}
     >
       <div>
