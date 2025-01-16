@@ -52,7 +52,7 @@ const Notification = ({
     },
     info: {
       icon: 'notifications-info',
-      color: 'text-primary-main',
+      color: 'text-primary-active',
     },
     success: {
       icon: 'info',
@@ -74,17 +74,17 @@ const Notification = ({
   return (
     <div
       ref={notificationRef}
-      className="border-customblue-10 bg-customblue-400 mx-2 mt-2 flex flex-col rounded-md border-2 p-2 outline-none"
+      className="border-customblue-10 bg-customblue-400 activeStudyBox mx-2 mt-2 flex flex-col rounded-md p-2 outline-none"
       data-cy={id}
       onKeyDown={onKeyPress}
       tabIndex={0}
     >
-      <div className="flex grow items-center">
+      <div className="svgColorWhite flex grow items-center">
         <Icon
           name={icon}
           className={classnames('h-6 w-6', color)}
         />
-        <span className="ml-2 text-[13px] text-black">{message}</span>
+        <span className="text-primary-active ml-2 text-[13px]">{message}</span>
       </div>
       <div className="mt-2 flex flex-wrap justify-end gap-2">
         {actions?.map((action, index) => {
@@ -97,6 +97,7 @@ const Notification = ({
               onClick={() => {
                 onSubmit(action.value);
               }}
+              className={action.text == 'Yes' ? 'darkestBtn' : 'darkBtn'}
             >
               {action.text}
             </Button>

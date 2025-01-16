@@ -117,7 +117,7 @@ const DicomTagBrowser = ({ displaySets, displaySetInstanceUID }) => {
               value={selectedDisplaySetInstanceUID}
               onValueChange={value => onSelectChange({ value })}
             >
-              <SelectTrigger className="iconDarkColor">
+              <SelectTrigger className="iconDarkColor boderColorInTable">
                 {displaySetList.find(ds => ds.value === selectedDisplaySetInstanceUID)?.label ||
                   'Select Series'}
               </SelectTrigger>
@@ -158,7 +158,7 @@ const DicomTagBrowser = ({ displaySets, displaySetInstanceUID }) => {
             <InputFilterText
               placeholder="Search metadata..."
               onDebounceChange={setFilterValue}
-              className="iconDarkColor"
+              className="iconDarkColor searchInputField"
             />
           </div>
         </div>

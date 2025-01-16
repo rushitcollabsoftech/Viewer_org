@@ -33,7 +33,7 @@ const Modal = ({
 
   const renderHeader = () =>
     title && (
-      <header className="allButtonGradient drag-handle flex items-center rounded-tl rounded-tr px-[20px] py-[13px]">
+      <header className="modelBox drag-handle flex items-center rounded-tl rounded-tr px-[20px] py-[13px]">
         <Typography
           variant="h6"
           color="text-light"

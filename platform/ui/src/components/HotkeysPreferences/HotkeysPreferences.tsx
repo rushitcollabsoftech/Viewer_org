@@ -108,7 +108,7 @@ const HotkeysPreferences = ({
                             modifierKeys={MODIFIER_KEYS}
                             onChange={onChangeHandler}
                             hotkeys={hotkeysModule}
-                            className="textBlack h-8 text-lg"
+                            className="hotkeyInputField h-8 text-lg"
                           />
                           {error && (
                             <span className="p-2 text-left text-sm text-red-600">{error}</span>

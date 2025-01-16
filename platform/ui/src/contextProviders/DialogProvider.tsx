@@ -221,7 +221,7 @@ const DialogProvider = ({ children, service = null }) => {
       );
 
       const withOverlay = component => {
-        const background = 'bg-black bg-opacity-50';
+        const background = 'blackBg bg-opacity-50';
         const overlay = 'fixed z-50 left-0 top-0 w-full h-full overflow-auto';
         return (
           <div

@@ -16,9 +16,7 @@ const rowStyle = {
 function ColumnHeaders({ tagRef, vrRef, keywordRef, valueRef }) {
   return (
     <div
-      className={classNames(
-        'bg-secondary-dark ohif-scrollbar flex w-full flex-row overflow-y-scroll'
-      )}
+      className={classNames('tableTopBar ohif-scrollbar flex w-full flex-row overflow-y-scroll')}
       style={rowVerticalPaddingStyle}
     >
       <div className="w-4/24 px-3">
@@ -124,7 +122,7 @@ function DicomTagTable({ rows }) {
         <div
           style={{ ...style, ...rowStyle }}
           className={classNames(
-            'hover:bg-secondary-main border-secondary-light iconDarkColor flex w-full flex-row items-center break-all bg-black text-base transition duration-300',
+            'hover:tableTopBar border-secondary-light iconDarkColor boderColorInTable flex w-full flex-row items-center break-all text-base transition duration-300',
             lineHeightClassName
           )}
           key={`DICOMTagRow-${index}`}
@@ -187,7 +185,7 @@ function DicomTagTable({ rows }) {
         valueRef={valueRef}
       />
       <div
-        className="relative m-auto border-2 border-black bg-black"
+        className="modelInnerBox relative m-auto border-black"
         style={{ height: '32rem' }}
       >
         {isHeaderRendered() && (

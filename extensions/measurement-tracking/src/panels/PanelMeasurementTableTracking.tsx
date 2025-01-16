@@ -101,7 +101,7 @@ function PanelMeasurementTableTracking({
           }
 
           return (
-            <div className="bgLight flex h-9 w-full items-center rounded pr-0.5">
+            <div className="bgLightActive mb-1 flex h-9 w-full items-center rounded pr-0.5">
               <div className="flex space-x-1">
                 <Button
                   size="sm"

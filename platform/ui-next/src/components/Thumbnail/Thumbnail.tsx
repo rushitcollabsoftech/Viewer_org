@@ -209,7 +209,7 @@ const Thumbnail = ({
           <div
             className={classnames(
               'h-[32px] w-[4px] rounded-[2px]',
-              isActive || isHydratedForDerivedDisplaySet ? 'bg-highlight' : 'bg-primary/65',
+              isActive || isHydratedForDerivedDisplaySet ? 'bg-highlightWithWhite' : 'bg-highlight',
               loadingProgress && loadingProgress < 1 && 'bg-primary/25'
             )}
           ></div>

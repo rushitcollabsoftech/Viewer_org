@@ -181,7 +181,7 @@ const DataRow: React.FC<DataRowProps> = ({
   };
 
   return (
-    <div className={`bgLight roundedBox flex flex-col ${isVisible ? '' : 'opacity-60'}`}>
+    <div className={`bgLight roundedBox mb-1 flex flex-col ${isVisible ? '' : 'opacity-60'}`}>
       <div
         className={`roundedBox flex items-center ${
           isSelected ? 'bg-popover' : 'bgLight'
@@ -217,9 +217,7 @@ const DataRow: React.FC<DataRowProps> = ({
             <Tooltip>
               <TooltipTrigger asChild>
                 <span
-                  className={`iconDarkColor cursor-default text-base ${
-                    isSelected ? 'text-highlight' : 'text-muted-foreground'
-                  } [overflow:hidden] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]`}
+                  className={`iconDarkColor text-bas cursor-default [overflow:hidden] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]`}
                 >
                   {title}
                 </span>
@@ -233,9 +231,7 @@ const DataRow: React.FC<DataRowProps> = ({
             </Tooltip>
           ) : (
             <span
-              className={`text-base iconDarkColor${
-                isSelected ? 'text-highlight' : 'text-muted-foreground'
-              } [overflow:hidden] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]`}
+              className={`iconDarkColor text-base [overflow:hidden] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]`}
             >
               {title}
             </span>

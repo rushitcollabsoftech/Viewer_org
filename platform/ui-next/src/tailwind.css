@@ -281,11 +281,11 @@ input[type='number'] {
 }
 
 .bg-popover {
-  background: #C7D9DD !important;
+  background: #025C74 !important;
 }
 
 .bgLight {
-  background: #C7D9DD !important;
+  background: #004152 !important;
 }
 
 .leftSideBarBtnBox {
@@ -293,7 +293,7 @@ input[type='number'] {
 }
 
 .allButtonGradient {
-  background: linear-gradient(#0a586c, #016f8b) !important;
+  background: #025C74 !important;
 }
 
 .bg-black {
@@ -367,12 +367,12 @@ input[type='number'] {
   border-color: #016f8b !important;
 }
 
-.bg-popover {
-  background: linear-gradient(#0a586c, #016f8b) !important;
+.bg-highlight {
+  background: #025C74 !important;
 }
 
 .studyBox {
-  background: #9eccd6 !important;
+  background: #004152 !important;
   border-radius: .2rem !important;
 }
 
@@ -410,7 +410,8 @@ input[type='number'] {
 }
 
 .textBlack {
-  color: #000000 !important;
+  color: #ffffff !important;
+  font-weight: bolder !important;
 }
 
 .iconList>div>div>div {
@@ -437,4 +438,85 @@ input[type='number'] {
   background: #01303D !important;
   padding: .2rem .2rem .1rem .2rem !important;
   border-radius: .2rem !important;
+}
+
+.darkBtn {
+  background: #025C74 !important;
+}
+
+.darkestBtn {
+  background: #002A35 !important;
+}
+
+.svgColorWhite svg circle {
+  fill: white !important;
+}
+
+.svgColorWhite svg path {
+  stroke: #004152 !important;
+}
+
+.bgLightActive {
+  background: #025C74 !important;
+}
+
+.hotkeyInputField {
+  border: .1rem solid #025C74 !important;
+  background: #01303D !important;
+  color: #ffffff !important;
+}
+
+.searchInputField svg g {
+  stroke: white !important;
+}
+
+.searchInputField svg path:first-child {
+  stroke: none;
+  /* Ensure no border is applied to the main path */
+}
+
+.searchInputField input {
+  border: .1rem solid #025C74 !important;
+  background: #01303D !important;
+  color: #ffffff !important;
+}
+
+.searchInputField input::placeholder {
+  color: #ffffff !important;
+}
+
+.tableTopBar {
+  background: #025C74 !important;
+}
+
+.modelBox {
+  background: #004152 !important;
+}
+
+.modelInnerBox {
+  background: #01303D !important;
+}
+
+.boderColorInTable {
+  border-color: #025C74 !important;
+}
+
+.closeIconBtn circle {
+  fill: #025c74 !important;
+}
+
+.closeIconBtn path {
+  stroke: #ffffff !important;
+}
+
+.bg-highlightWithWhite {
+  background: #ffffff !important;
+}
+
+.bg-primary-dark {
+  background: #004152 !important;
+}
+
+.blackBg {
+  background: rgba(0, 0, 0, 0.5) !important;
 }
