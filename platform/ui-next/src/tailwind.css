@@ -520,3 +520,86 @@ input[type='number'] {
 .blackBg {
   background: rgba(0, 0, 0, 0.5) !important;
 }
+
+
+/* ============================ Local page css */
+.l_mainBox {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.l_innerBox {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.l_haderBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.l_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #01303D;
+}
+
+.l_desc {
+  font-size: .8rem;
+  color: #01303D;
+}
+
+.l_uploadStar {
+  height: 3rem;
+}
+
+.l_uploadImgBox {
+  width: 100%;
+  height: calc(100% - 8rem);
+  border: .12rem dashed #01303D;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.l_uploadImg {
+  width: 7rem;
+}
+
+.l_uploadText {
+  color: #01303D;
+  font-weight: 500;
+  margin: 2rem 0;
+}
+
+.l_btnBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.l_uploadBtn {
+  color: #016F8B !important;
+  background: none !important;
+  font-weight: 500;
+}
+
+.l_noteData {
+  color: #01303D;
+  font-weight: 500;
+}
+
+.l_noteData span {
+  color: #950404;
+}

@@ -20,18 +20,12 @@ const getLoadButton = (onDrop, text, isDir) => {
         <div {...getRootProps()}>
           <Button
             rounded="full"
-            variant="contained" // outlined
+            variant="outlined"
             disabled={false}
-            endIcon={
-              <Icon
-                name="launch-arrow"
-                className="textWhite"
-              />
-            } // launch-arrow | launch-info
-            className={classnames('bgLightDark iconDarkColor font-medium', 'ml-2')}
+            className={classnames('l_uploadBtn', 'ml-2')}
             onClick={() => {}}
           >
-            {text}
+            <u>{text}</u>
             {isDir ? (
               <input
                 {...getInputProps()}
@@ -126,15 +120,11 @@ function Local({ modePath }: LocalProps) {
       {({ getRootProps }) => (
         <div
           {...getRootProps()}
-          style={{ width: '100%', height: '100%' }}
+          className="l_mainBox"
         >
-          <div className="flex h-screen w-screen items-center justify-center">
+          {/* <div className="flex h-screen w-screen items-center justify-center">
             <div className="bg-secondary-dark mx-auto space-y-2 rounded-lg py-8 px-8 drop-shadow-md">
               <div className="flex items-center justify-center">
-                {/* <Icon
-                  name="logo-dark-background"
-                  className="h-28"
-                /> */}
                 <div
                   style={{
                     backgroundColor: 'white',
@@ -173,6 +163,38 @@ function Local({ modePath }: LocalProps) {
                 {getLoadButton(onDrop, 'Load folders', true)}
               </div>
             </div>
+          </div> */}
+
+          <div className="l_innerBox">
+            <div className="l_haderBox">
+              <div>
+                <h2 className="l_title">Upload and attach files</h2>
+                <p className="l_desc">Upload and attach Files to this project.</p>
+              </div>
+              <img
+                src="assets/uploadStar.png"
+                alt="Star"
+                className="l_uploadStar"
+              />
+            </div>
+            <div className="l_uploadImgBox">
+              <img
+                src="assets/uploadImg.png"
+                alt="Upload Image"
+                className="l_uploadImg"
+              />
+              <p className="l_uploadText">
+                Drag and Drop DICOM files here to load them in the Viewer
+              </p>
+              <div className="l_btnBox">
+                {getLoadButton(onDrop, 'Click to Upload File', false)}
+                {getLoadButton(onDrop, 'Click to Upload Folder', true)}
+              </div>
+            </div>
+            <p className="l_noteData">
+              <span>Note:-</span> You data is not uploaded to any server, it will stay in your local
+              browser application
+            </p>
           </div>
         </div>
       )}
