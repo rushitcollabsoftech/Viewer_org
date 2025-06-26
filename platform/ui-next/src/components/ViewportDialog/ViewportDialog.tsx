@@ -69,7 +69,7 @@ const ViewportDialog: React.FC<ViewportDialogProps> = ({
     },
     info: {
       icon: 'notifications-info',
-      color: 'text-primary-main',
+      color: 'text-primary-active',
     },
     success: {
       icon: 'info',
@@ -91,17 +91,17 @@ const ViewportDialog: React.FC<ViewportDialogProps> = ({
   return (
     <div
       ref={notificationRef}
-      className="border-input bg-muted mx-1.5 mt-2 flex flex-col rounded-md border p-2 outline-none"
+      className="border-customblue-10 bg-customblue-400 activeStudyBox mx-2 mt-2 flex flex-col rounded-md p-2 outline-none"
       data-cy={id}
       onKeyDown={onKeyPress}
       tabIndex={0}
     >
-      <div className="flex grow items-center">
-        <Icons.ByName
+      <div className="svgColorWhite flex grow items-center">
+        <Icon
           name={icon}
           className={classnames('h-5 w-5', color)}
         />
-        <span className="text-foreground ml-2 text-base">{message}</span>
+        <span className="text-primary-active ml-2 text-[13px]">{message}</span>
       </div>
       <div className="mt-2 flex flex-wrap justify-end gap-2">
         {actions?.map((action, index) => {
@@ -114,7 +114,7 @@ const ViewportDialog: React.FC<ViewportDialogProps> = ({
               onClick={() => {
                 onSubmit(action.value);
               }}
-              className="min-w-16"
+              className={action.text == 'Yes' ? 'darkestBtn' : 'darkBtn'}
             >
               {action.text}
             </Button>

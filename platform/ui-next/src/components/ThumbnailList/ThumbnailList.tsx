@@ -26,64 +26,64 @@ const ThumbnailList = ({
   );
 
   return (
-    <div className="flex flex-col">
+    <div
+      className="min-h-[350px]"
+      style={{
+        '--radix-accordion-content-height': '350px',
+      }}
+    >
       <div
-        ref={ref}
-        className="flex flex-col gap-[2px] pt-[4px] pr-[2.5px] pl-[5px] pb-[4px]"
+        id="ohif-thumbnail-list"
+        className={`ohif-scrollbar sidebarBgDarkColor grid place-items-center overflow-y-hidden pt-[4px] pr-[2.5px] pl-[2.5px] ${viewPreset === 'thumbnails' ? 'grid-cols-2 gap-[4px] pb-[12px]' : 'grid-cols-1 gap-[2px]'}`}
       >
-        {thumbnailItems.length > 0 && (
-          <div
-            id="ohif-thumbnail-list"
-            className="bg-bkg-low grid grid-cols-[repeat(auto-fit,_minmax(0,135px))] place-items-start gap-[4px]"
-          >
-            {thumbnailItems.map(item => {
-              const { displaySetInstanceUID, componentType, numInstances, ...rest } = item;
-
-              const isActive = activeDisplaySetInstanceUIDs.includes(displaySetInstanceUID);
-              return (
-                <Thumbnail
-                  key={displaySetInstanceUID}
-                  {...rest}
-                  displaySetInstanceUID={displaySetInstanceUID}
-                  numInstances={numInstances || 1}
-                  isActive={isActive}
-                  thumbnailType={componentType}
-                  viewPreset="thumbnails"
-                  onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
-                  onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
-                  onClickUntrack={onClickUntrack.bind(null, displaySetInstanceUID)}
-                  ThumbnailMenuItems={ThumbnailMenuItems}
-                />
-              );
-            })}
-          </div>
-        )}
-        {/* List Items */}
-        {listItems.length > 0 && (
-          <div
-            id="ohif-thumbnail-list"
-            className="bg-bkg-low grid grid-cols-[repeat(auto-fit,_minmax(0,275px))] place-items-start gap-[2px]"
-          >
-            {listItems.map(item => {
-              const { displaySetInstanceUID, componentType, numInstances, ...rest } = item;
-              const isActive = activeDisplaySetInstanceUIDs.includes(displaySetInstanceUID);
-              return (
-                <Thumbnail
-                  key={displaySetInstanceUID}
-                  {...rest}
-                  displaySetInstanceUID={displaySetInstanceUID}
-                  numInstances={numInstances || 1}
-                  isActive={isActive}
-                  thumbnailType={componentType}
-                  viewPreset="list"
-                  onClick={onThumbnailClick.bind(null, displaySetInstanceUID)}
-                  onDoubleClick={onThumbnailDoubleClick.bind(null, displaySetInstanceUID)}
-                  onClickUntrack={onClickUntrack.bind(null, displaySetInstanceUID)}
-                  ThumbnailMenuItems={ThumbnailMenuItems}
-                />
-              );
-            })}
-          </div>
+        {thumbnails.map(
+          ({
+            displaySetInstanceUID,
+            description,
+            dragData,
+            seriesNumber,
+            numInstances,
+            loadingProgress,
+            modality,
+            componentType,
+            countIcon,
+            isTracked,
+            canReject,
+            onReject,
+            imageSrc,
+            messages,
+            imageAltText,
+            isHydratedForDerivedDisplaySet,
+          }) => {
+            const isActive = activeDisplaySetInstanceUIDs.includes(displaySetInstanceUID);
+            return (
+              <Thumbnail
+                key={displaySetInstanceUID}
+                displaySetInstanceUID={displaySetInstanceUID}
+                dragData={dragData}
+                description={description}
+                seriesNumber={seriesNumber}
+                numInstances={numInstances || 1}
+                countIcon={countIcon}
+                imageSrc={imageSrc}
+                imageAltText={imageAltText}
+                messages={messages}
+                isActive={isActive}
+                modality={modality}
+                viewPreset={componentType === 'thumbnailNoImage' ? 'list' : viewPreset}
+                thumbnailType={componentType}
+                onClick={() => onThumbnailClick(displaySetInstanceUID)}
+                onDoubleClick={() => onThumbnailDoubleClick(displaySetInstanceUID)}
+                isTracked={isTracked}
+                loadingProgress={loadingProgress}
+                onClickUntrack={() => onClickUntrack(displaySetInstanceUID)}
+                isHydratedForDerivedDisplaySet={isHydratedForDerivedDisplaySet}
+                canReject={canReject}
+                onReject={onReject}
+                onThumbnailContextMenu={onThumbnailContextMenu}
+              />
+            );
+          }
         )}
       </div>
     </div>

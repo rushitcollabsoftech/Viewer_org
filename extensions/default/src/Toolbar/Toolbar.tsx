@@ -60,7 +60,14 @@ export function Toolbar({ buttonSection = 'primary', viewportId, location }: Too
           />
         );
 
-        return <div key={id}>{tool}</div>;
+        return (
+          <div
+            key={id}
+            className="headerBtnBox"
+          >
+            {tool}
+          </div>
+        );
       })}
     </>
   );

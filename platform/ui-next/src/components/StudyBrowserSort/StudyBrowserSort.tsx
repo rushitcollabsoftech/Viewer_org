@@ -53,14 +53,9 @@ export function StudyBrowserSort({ servicesManager }: withAppTypes) {
   return (
     <div className="flex w-[50%] items-center gap-1">
       <DropdownMenu>
-        <Tooltip>
-          <TooltipTrigger className="w-full overflow-hidden">
-            <DropdownMenuTrigger className="border-inputfield-main focus:border-inputfield-main flex h-[26px] w-full items-center justify-start overflow-hidden whitespace-nowrap rounded border bg-black p-2 text-base text-white">
-              {selectedSort.label}
-            </DropdownMenuTrigger>
-          </TooltipTrigger>
-          <TooltipContent>{selectedSort.label}</TooltipContent>
-        </Tooltip>
+        <DropdownMenuTrigger className="border-inputfield-main focus:border-inputfield-main iconDarkColor flex h-[26px] w-[125px] items-center justify-start rounded border bg-black p-2 text-base">
+          {selectedSort.label}
+        </DropdownMenuTrigger>
         <DropdownMenuContent className="bg-black">
           {sortFunctions.map(sort => (
             <DropdownMenuItem
@@ -73,21 +68,16 @@ export function StudyBrowserSort({ servicesManager }: withAppTypes) {
           ))}
         </DropdownMenuContent>
       </DropdownMenu>
-      <Tooltip>
-        <TooltipTrigger>
-          <button
-            onClick={toggleSortDirection}
-            className="flex h-[26px] items-center justify-center bg-black"
-          >
-            {sortDirection === 'ascending' ? (
-              <Icons.SortingAscending className="text-primary-main w-2" />
-            ) : (
-              <Icons.SortingDescending className="text-primary-main w-2" />
-            )}
-          </button>
-        </TooltipTrigger>
-        <TooltipContent>Sort direction</TooltipContent>
-      </Tooltip>
+      <button
+        onClick={toggleSortDirection}
+        className="flex h-[26px] items-center justify-center"
+      >
+        {sortDirection === 'ascending' ? (
+          <Icons.SortingAscending className="iconDarkColor w-2" />
+        ) : (
+          <Icons.SortingDescending className="iconDarkColor w-2" />
+        )}
+      </button>
     </div>
   );
 }

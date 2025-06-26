@@ -26,7 +26,6 @@ npm-debug.log
 package-lock.json
 yarn-error.log
 .DS_Store
-.env
 *.code-workspace
 .directory
 
@@ -60,3 +59,4 @@ tests/playwright-report/
 /playwright/.cache/
 
 **/.claude/settings.local.json
+config.bat

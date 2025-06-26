@@ -206,9 +206,6 @@
 }
 
 */
-
-/* Updated Playground page styles */
-
 @layer base {
   html {
     font-family: 'Inter', sans-serif;
@@ -254,5 +251,358 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 input[type='number'] {
-  -moz-appearance: textfield; /* For Firefox */
+  -moz-appearance: textfield;
+  /* For Firefox */
+}
+
+/* CSS added by Rushit Patel */
+
+.mainBgColor {
+  background: #01303D !important;
+}
+
+.darkColorWithGradient {
+  background: linear-gradient(#0a586c, #016f8b) !important;
+}
+
+.bg-secondary-dark {
+  /* background: linear-gradient(#0a586c, #016f8b) !important; */
+  background: #004152 !important;
+}
+
+.bg-customblue-400 {
+  background: #C7D9DD !important;
+}
+
+.bg-bkg-med,
+.bg-bkg-low {
+  background: #004152 !important;
+}
+
+.sidebarBgDarkColor {
+  background: #01303D !important;
+}
+
+.bg-popover {
+  background: #025C74 !important;
+}
+
+.bgLight {
+  background: #004152 !important;
+}
+
+.leftSideBarBtnBox {
+  background: #004152 !important;
+}
+
+.allButtonGradient {
+  background: #025C74 !important;
+}
+
+.bg-black {
+  background: #ffffff !important;
+}
+
+.textWhite {
+  color: #ffffff !important;
+}
+
+.cTitleText {
+  width: 100% !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  font-size: 1rem !important;
+  font-weight: bold !important;
+}
+
+.text-primary-active {
+  color: white !important;
+}
+
+.text-primary-active-dark {
+  color: #004152 !important;
+}
+
+.sidebarCloseIcon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff !important;
+}
+
+.iconDarkColor {
+  color: #ffffff !important;
+}
+
+.iconLightDarkColor {
+  color: #9eccd6 !important;
+}
+
+.darkBorderColor {
+  border: .1rem solid #016f8b !important;
+}
+
+.darkStrokeColor {
+  stroke: #016f8b !important;
+}
+
+.tooltip.tooltip-bottom .tooltip-box::before {
+  height: .1rem !important;
+  background-color: #016f8b !important;
+}
+
+.bgDark {
+  background: #016f8b !important;
+}
+
+.bgLightDark {
+  background: #9eccd6 !important;
+}
+
+.border-light {
+  border-color: #9eccd6 !important;
+}
+
+.border-dark {
+  border-color: #016f8b !important;
+}
+
+.bg-highlight {
+  background: #025C74 !important;
+}
+
+.studyBox {
+  background: #004152 !important;
+  border-radius: .2rem !important;
+}
+
+.activeStudyBox {
+  background: #004152 !important;
+}
+
+.text-muted-foreground {
+  color: white !important;
+}
+
+.toggleBtnIcon button {
+  color: #016f8b !important;
+}
+
+.activeToggle svg {
+  color: #016f8b !important;
+}
+
+.activeToggleBtn {
+  color: white !important;
+  background: #004152 !important;
+}
+
+.activeToggleBtn svg {
+  color: white !important;
+}
+
+.roundedBox {
+  border-radius: .3rem;
+}
+
+.css-13cymwt-control {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.textBlack {
+  color: #ffffff !important;
+  font-weight: bolder !important;
+}
+
+.iconList>div>div>div {
+  width: 2rem !important;
+  height: 2rem !important;
+  padding: 0rem !important;
+}
+
+.iconList div div div button svg {
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+}
+
+.sidebarActiveTab {
+  background: #004152 !important;
+}
+
+.sidebarActiveTab span {
+  color: white !important;
+}
+
+.darkBgForBtns {
+  height: fit-content !important;
+  background: #01303D !important;
+  padding: .2rem .2rem .1rem .2rem !important;
+  border-radius: .2rem !important;
+}
+
+.darkBtn {
+  background: #025C74 !important;
+}
+
+.darkestBtn {
+  background: #002A35 !important;
+}
+
+.svgColorWhite svg circle {
+  fill: white !important;
+}
+
+.svgColorWhite svg path {
+  stroke: #004152 !important;
+}
+
+.bgLightActive {
+  background: #025C74 !important;
+}
+
+.hotkeyInputField {
+  border: .1rem solid #025C74 !important;
+  background: #01303D !important;
+  color: #ffffff !important;
+}
+
+.searchInputField svg g {
+  stroke: white !important;
+}
+
+.searchInputField svg path:first-child {
+  stroke: none;
+  /* Ensure no border is applied to the main path */
+}
+
+.searchInputField input {
+  border: .1rem solid #025C74 !important;
+  background: #01303D !important;
+  color: #ffffff !important;
+}
+
+.searchInputField input::placeholder {
+  color: #ffffff !important;
+}
+
+.tableTopBar {
+  background: #025C74 !important;
+}
+
+.modelBox {
+  background: #004152 !important;
+}
+
+.modelInnerBox {
+  background: #01303D !important;
+}
+
+.boderColorInTable {
+  border-color: #025C74 !important;
+}
+
+.closeIconBtn circle {
+  fill: #025c74 !important;
+}
+
+.closeIconBtn path {
+  stroke: #ffffff !important;
+}
+
+.bg-highlightWithWhite {
+  background: #ffffff !important;
+}
+
+.bg-primary-dark {
+  background: #004152 !important;
+}
+
+.blackBg {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+
+/* ============================ Local page css */
+.l_mainBox {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.l_innerBox {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.l_haderBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.l_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #01303D;
+}
+
+.l_desc {
+  font-size: .8rem;
+  color: #01303D;
+}
+
+.l_uploadStar {
+  height: 3rem;
+}
+
+.l_uploadImgBox {
+  width: 100%;
+  height: calc(100% - 8rem);
+  border: .12rem dashed #01303D;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.l_uploadImg {
+  width: 7rem;
+}
+
+.l_uploadText {
+  color: #01303D;
+  font-weight: 500;
+  margin: 2rem 0;
+}
+
+.l_btnBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.l_uploadBtn {
+  color: #016F8B !important;
+  background: none !important;
+  font-weight: 500;
+}
+
+.l_noteData {
+  color: #01303D;
+  font-weight: 500;
+}
+
+.l_noteData span {
+  color: #950404;
 }

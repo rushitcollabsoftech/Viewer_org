@@ -90,9 +90,19 @@ function modeFactory({ modeConfiguration }) {
       // Init Default and SR ToolGroups
       initToolGroups(extensionManager, toolGroupService, commandsManager);
 
-      toolbarService.register(toolbarButtons);
-      toolbarService.updateSection(toolbarService.sections.primary, [
-        'MeasurementTools',
+      toolbarService.addButtons([...toolbarButtons, ...moreTools]);
+      toolbarService.createButtonSection('primary', [
+        'Length',
+        'Bidirectional',
+        'ArrowAnnotate',
+        'EllipticalROI',
+        'RectangleROI',
+        'CircleROI',
+        'Angle',
+        'StackScroll',
+        'PlanarFreehandROI',
+        'SplineROI',
+        'LivewireContour',
         'Zoom',
         'Pan',
         'TrackballRotate',

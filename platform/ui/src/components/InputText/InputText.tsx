@@ -22,7 +22,7 @@ const InputText = ({
     >
       <Input
         id={id}
-        className="mt-2"
+        className="iconDarkColor mt-2"
         type="text"
         containerClassName="mr-2"
         value={value}

@@ -464,25 +464,23 @@ function WorkList({
   });
 
   const hasStudies = numOfStudies > 0;
+  const versionNumber = process.env.VERSION_NUMBER;
+  const commitHash = process.env.COMMIT_HASH;
 
-  const AboutModal = customizationService.getCustomization(
-    'ohif.aboutModal'
-  ) as coreTypes.MenuComponentCustomization;
-  const UserPreferencesModal = customizationService.getCustomization(
-    'ohif.userPreferencesModal'
-  ) as coreTypes.MenuComponentCustomization;
+  // Remove about option
 
   const menuOptions = [
-    {
-      title: AboutModal?.menuTitle ?? t('Header:About'),
-      icon: 'info',
-      onClick: () =>
-        show({
-          content: AboutModal,
-          title: AboutModal?.title ?? t('AboutModal:About OHIF Viewer'),
-          containerClassName: AboutModal?.containerClassName ?? 'max-w-md',
-        }),
-    },
+    // {
+    //   title: t('Header:About'),
+    //   icon: 'info',
+    //   onClick: () =>
+    //     show({
+    //       content: AboutModal,
+    //       title: t('AboutModal:About OHIF Viewer'),
+    //       contentProps: { versionNumber, commitHash },
+    //       containerDimensions: 'max-w-4xl max-h-4xl',
+    //     }),
+    // },
     {
       title: UserPreferencesModal.menuTitle ?? t('Header:Preferences'),
       icon: 'settings',

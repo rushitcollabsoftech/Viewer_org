@@ -74,9 +74,7 @@ const RowComponent = ({
 function ColumnHeaders({ tagRef, vrRef, keywordRef, valueRef }) {
   return (
     <div
-      className={classNames(
-        'bg-secondary-dark ohif-scrollbar flex w-full flex-row overflow-y-scroll'
-      )}
+      className={classNames('tableTopBar ohif-scrollbar flex w-full flex-row overflow-y-scroll')}
       style={rowVerticalPaddingStyle}
     >
       <div className="w-4/24 px-3">
@@ -182,8 +180,42 @@ function DicomTagTable({ rows }: { rows: Row[] }) {
     };
   }, []);
 
-  const getOneRowHeight = useCallback(
-    row => {
+  const Row = useCallback(
+    ({ index, style }) => {
+      const row = rows[index];
+
+      return (
+        <div
+          style={{ ...style, ...rowStyle }}
+          className={classNames(
+            'hover:tableTopBar border-secondary-light iconDarkColor boderColorInTable flex w-full flex-row items-center break-all text-base transition duration-300',
+            lineHeightClassName
+          )}
+          key={`DICOMTagRow-${index}`}
+        >
+          <div className="w-4/24 px-3">{row[0]}</div>
+          <div className="w-2/24 px-3">{row[1]}</div>
+          <div className="w-6/24 px-3">{row[2]}</div>
+          <div className="w-5/24 grow px-3">{row[3]}</div>
+        </div>
+      );
+    },
+    [rows]
+  );
+
+  /**
+   * Whenever any one of the column headers is set, then the header is rendered.
+   * Here we chose the tag header.
+   */
+  const isHeaderRendered = useCallback(() => tagHeaderElem !== null, [tagHeaderElem]);
+
+  /**
+   * Get the item/row size. We use the header column widths to calculate the various row heights.
+   * @param index the row index
+   * @returns the row height
+   */
+  const getItemSize = useCallback(
+    index => {
       const headerWidths = [
         tagHeaderElem.offsetWidth,
         vrHeaderElem.offsetWidth,
@@ -283,7 +315,7 @@ function DicomTagTable({ rows }: { rows: Row[] }) {
         valueRef={valueRef}
       />
       <div
-        className="relative m-auto border-2 border-black bg-black"
+        className="modelInnerBox relative m-auto border-black"
         style={{ height: '32rem' }}
       >
         {isHeaderRendered() && (

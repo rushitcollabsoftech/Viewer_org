@@ -62,8 +62,8 @@ const Thumbnail = ({
     return (
       <div
         className={classnames(
-          'flex h-full w-full flex-col items-center justify-center gap-[2px] p-[4px]',
-          isActive && 'bg-popover rounded'
+          'studyBox flex h-full w-full flex-col items-center justify-center gap-[2px] p-[4px]',
+          isActive && 'activeStudyBox'
         )}
       >
         <div className="h-[114px] w-[128px]">
@@ -166,15 +166,15 @@ const Thumbnail = ({
     return (
       <div
         className={classnames(
-          'flex h-full w-full items-center justify-between pr-[8px] pl-[8px] pt-[4px] pb-[4px]',
-          isActive && 'bg-popover rounded'
+          'studyBox flex h-full w-full items-center justify-between pr-[8px] pl-[8px] pt-[4px] pb-[4px]',
+          isActive && 'activeStudyBox'
         )}
       >
         <div className="relative flex h-[32px] w-full items-center gap-[8px] overflow-hidden">
           <div
             className={classnames(
-              'h-[32px] w-[4px] min-w-[4px] rounded',
-              isActive || isHydratedForDerivedDisplaySet ? 'bg-highlight' : 'bg-primary/65',
+              'h-[32px] w-[4px] rounded-[2px]',
+              isActive || isHydratedForDerivedDisplaySet ? 'bg-highlightWithWhite' : 'bg-highlight',
               loadingProgress && loadingProgress < 1 && 'bg-primary/25'
             )}
           ></div>

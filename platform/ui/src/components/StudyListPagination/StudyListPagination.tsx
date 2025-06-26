@@ -43,20 +43,21 @@ const StudyListPagination = ({ onChangePage, currentPage, perPage, onChangePerPa
               hideSelectedOptions={true}
               onChange={onSelectedRange}
             />
-            <Typography className="text-base opacity-60">{t('Results per page')}</Typography>
+            <Typography className="iconDarkColor text-base opacity-60">
+              {t('Results per page')}
+            </Typography>
           </div>
           <div className="">
             <div className="flex items-center">
-              <Typography className="mr-4 text-base opacity-60">
+              <Typography className="iconDarkColor mr-4 text-base opacity-60">
                 {t('Page')} {currentPage}
               </Typography>
               {/* TODO Revisit design of LegacyButtonGroup later - for now use LegacyButton for its children.*/}
               <LegacyButtonGroup>
                 <LegacyButton
                   size="initial"
-                  className="px-4 py-2 text-base"
+                  className="iconDarkColor border-dark px-4 py-2 text-base"
                   color="translucent"
-                  border="primary"
                   variant="outlined"
                   onClick={() => navigateToPage(1)}
                 >
@@ -64,9 +65,8 @@ const StudyListPagination = ({ onChangePage, currentPage, perPage, onChangePerPa
                 </LegacyButton>
                 <LegacyButton
                   size="initial"
-                  className="py-2 px-2 text-base"
+                  className="iconDarkColor border-dark py-2 px-2 text-base"
                   color="translucent"
-                  border="primary"
                   variant="outlined"
                   onClick={() => navigateToPage(currentPage - 1)}
                 >
@@ -74,9 +74,8 @@ const StudyListPagination = ({ onChangePage, currentPage, perPage, onChangePerPa
                 </LegacyButton>
                 <LegacyButton
                   size="initial"
-                  className="py-2 px-4 text-base"
+                  className="iconDarkColor border-dark py-2 px-4 text-base"
                   color="translucent"
-                  border="primary"
                   variant="outlined"
                   onClick={() => navigateToPage(currentPage + 1)}
                 >

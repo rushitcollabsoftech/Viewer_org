@@ -68,9 +68,9 @@ window.config = {
       configuration: {
         friendlyName: 'AWS S3 Static wado server',
         name: 'aws',
-        wadoUriRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
-        qidoRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
-        wadoRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
+        wadoUriRoot: 'https://collabdicomcloudwadowebapicore202406.azurewebsites.net/api',
+        qidoRoot: 'https://collabdicomcloudwadowebapicore202406.azurewebsites.net/api',
+        wadoRoot: 'https://collabdicomcloudwadowebapicore202406.azurewebsites.net/api',
         qidoSupportsIncludeField: false,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',

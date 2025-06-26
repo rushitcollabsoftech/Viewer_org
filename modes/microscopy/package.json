@@ -26,11 +26,11 @@
   "scripts": {
     "clean": "shx rm -rf dist",
     "clean:deep": "yarn run clean && shx rm -rf node_modules",
-    "dev": "cross-env NODE_ENV=development webpack --config .webpack/webpack.dev.js --watch --output-pathinfo",
-    "dev:cornerstone": "yarn run dev",
-    "build": "cross-env NODE_ENV=production webpack --config .webpack/webpack.prod.js",
-    "build:package": "yarn run build",
-    "start": "yarn run dev",
+    "dev": "node init && cross-env NODE_ENV=development webpack --config .webpack/webpack.dev.js --watch --output-pathinfo",
+    "dev:cornerstone": "node init && yarn run dev",
+    "build": "node init && cross-env NODE_ENV=production webpack --config .webpack/webpack.prod.js",
+    "build:package": "node init && yarn run build",
+    "start": "node init && yarn run dev",
     "test:unit": "jest --watchAll",
     "test:unit:ci": "jest --ci --runInBand --collectCoverage --passWithNoTests"
   },
