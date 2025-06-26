@@ -19,12 +19,13 @@ const getLoadButton = (onDrop, text, isDir) => {
       {({ getRootProps, getInputProps }) => (
         <div {...getRootProps()}>
           <Button
-            variant="default"
-            className="w-28"
+            rounded="full"
+            variant="outlined"
             disabled={false}
+            className={classnames('l_uploadBtn', 'ml-2')}
             onClick={() => {}}
           >
-            {text}
+            <u>{text}</u>
             {isDir ? (
               <input
                 {...getInputProps()}
@@ -129,12 +130,25 @@ function Local({ modePath }: LocalProps) {
       {({ getRootProps }) => (
         <div
           {...getRootProps()}
-          style={{ width: '100%', height: '100%' }}
+          className="l_mainBox"
         >
-          <div className="flex h-screen w-screen items-center justify-center">
-            <div className="bg-muted border-primary/60 mx-auto space-y-2 rounded-xl border border-dashed py-12 px-12 drop-shadow-md">
+          {/* <div className="flex h-screen w-screen items-center justify-center">
+            <div className="bg-secondary-dark mx-auto space-y-2 rounded-lg py-8 px-8 drop-shadow-md">
               <div className="flex items-center justify-center">
-                <Icons.OHIFLogoColorDarkBackground className="h-18" />
+                <div
+                  style={{
+                    backgroundColor: 'white',
+                    padding: '.8rem',
+                    borderRadius: '100%',
+                  }}
+                >
+                  <img
+                    src="https://www.godigitel.online/assets/logo-DsTfn6Hy.png"
+                    style={{
+                      width: '6rem',
+                    }}
+                  />
+                </div>
               </div>
               <div className="space-y-2 py-6 text-center">
                 {dropInitiated ? (
@@ -154,11 +168,43 @@ function Local({ modePath }: LocalProps) {
                   </div>
                 )}
               </div>
-              <div className="flex justify-center gap-2 pt-4">
+              <div className="flex justify-around pt-4">
                 {getLoadButton(onDrop, 'Load files', false)}
                 {getLoadButton(onDrop, 'Load folders', true)}
               </div>
             </div>
+          </div> */}
+
+          <div className="l_innerBox">
+            <div className="l_haderBox">
+              <div>
+                <h2 className="l_title">Upload and attach files</h2>
+                <p className="l_desc">Upload and attach Files to this project.</p>
+              </div>
+              <img
+                src="assets/uploadStar.png"
+                alt="Star"
+                className="l_uploadStar"
+              />
+            </div>
+            <div className="l_uploadImgBox">
+              <img
+                src="assets/uploadImg.png"
+                alt="Upload Image"
+                className="l_uploadImg"
+              />
+              <p className="l_uploadText">
+                Drag and Drop DICOM files here to load them in the Viewer
+              </p>
+              <div className="l_btnBox">
+                {getLoadButton(onDrop, 'Click to Upload File', false)}
+                {getLoadButton(onDrop, 'Click to Upload Folder', true)}
+              </div>
+            </div>
+            <p className="l_noteData">
+              <span>Note:-</span> You data is not uploaded to any server, it will stay in your local
+              browser application
+            </p>
           </div>
         </div>
       )}

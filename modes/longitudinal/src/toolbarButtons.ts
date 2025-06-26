@@ -547,6 +547,7 @@ const toolbarButtons: Button[] = [
       evaluate: 'evaluate.cornerstoneTool',
     },
   },
+  // ===============================
   {
     id: 'LivewireContour',
     uiType: 'ohif.toolButton',

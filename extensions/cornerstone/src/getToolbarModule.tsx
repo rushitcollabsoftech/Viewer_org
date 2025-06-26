@@ -430,7 +430,7 @@ export default function getToolbarModule({ servicesManager, extensionManager }: 
       name: 'evaluate.action',
       evaluate: () => {
         return {
-          disabled: false,
+          className: '!text-common-bright hover:!bg-primary-light hover:text-primary-light',
         };
       },
     },

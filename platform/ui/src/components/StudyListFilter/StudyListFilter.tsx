@@ -60,8 +60,8 @@ const StudyListFilter = ({
                     variant="outlined"
                     color="primaryActive"
                     border="primaryActive"
-                    className="mx-8"
-                    startIcon={<Icons.Cancel />}
+                    className="iconDarkColor mx-8"
+                    startIcon={<Icon name="cancel" />}
                     onClick={clearFilters}
                   >
                     {t('ClearFilters')}
@@ -70,7 +70,7 @@ const StudyListFilter = ({
 
                 <Typography
                   variant="h6"
-                  className="mr-2"
+                  className="text-primary-light mr-2"
                   data-cy={'num-studies'}
                 >
                   {numOfStudies > 100 ? '>100' : numOfStudies}
@@ -86,8 +86,8 @@ const StudyListFilter = ({
           </div>
         </div>
       </div>
-      <div className="sticky -top-1 z-10 mx-auto border-b-4 border-black">
-        <div className="bg-primary-dark pt-3 pb-3">
+      <div className="border-light sticky -top-1 z-10 mx-auto border-b-4">
+        <div className="bg-secondary-dark pt-3 pb-3">
           <InputGroup
             inputMeta={filtersMeta}
             values={filterValues}

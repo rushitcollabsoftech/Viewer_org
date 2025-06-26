@@ -15,7 +15,7 @@ const StudyListTableRow = props => {
       >
         <td
           className={classnames('border-0 p-0', {
-            'border-secondary-light bg-primary-dark border-b': isExpanded,
+            'border-secondary-light bgLightDark border-b': isExpanded,
           })}
         >
           <div
@@ -36,7 +36,7 @@ const StudyListTableRow = props => {
                   className={classnames(
                     'hover:bg-secondary-main cursor-pointer transition duration-300',
                     {
-                      'bg-primary-dark': !isExpanded,
+                      'bg-bkg-med': !isExpanded,
                     },
                     { 'bg-secondary-dark': isExpanded }
                   )}
@@ -49,8 +49,9 @@ const StudyListTableRow = props => {
                       <td
                         key={index}
                         className={classnames(
-                          'truncate px-4 py-2 text-base',
+                          'iconDarkColor truncate px-4 py-2 text-base',
                           { 'border-secondary-light border-b': !isExpanded },
+                          { iconLightDarkColor: isExpanded },
                           getGridWidthClass(gridCol) || ''
                         )}
                         style={{

@@ -193,13 +193,10 @@ export const DataRow: React.FC<DataRowProps> = ({
   };
 
   return (
-    <div
-      ref={rowRef}
-      className={cn('flex flex-col', !isVisible && 'opacity-60', className)}
-    >
+    <div className={`bgLight roundedBox mb-1 flex flex-col ${isVisible ? '' : 'opacity-60'}`}>
       <div
-        className={`flex items-center ${
-          isSelected ? 'bg-popover' : 'bg-muted'
+        className={`roundedBox flex items-center ${
+          isSelected ? 'bg-popover' : 'bgLight'
         } group relative cursor-pointer`}
         onClick={onSelect}
         data-cy="data-row"
@@ -208,15 +205,13 @@ export const DataRow: React.FC<DataRowProps> = ({
         <div className="bg-primary/20 pointer-events-none absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100"></div>
 
         {/* Number Box */}
-        {number !== null && (
-          <div
-            className={`flex h-7 max-h-7 w-7 flex-shrink-0 items-center justify-center rounded-l border-r border-black text-base ${
-              isSelected ? 'bg-highlight text-black' : 'bg-muted text-muted-foreground'
-            } overflow-hidden`}
-          >
-            {number}
-          </div>
-        )}
+        <div
+          className={`flex h-7 max-h-7 w-7 flex-shrink-0 items-center justify-center rounded-l text-base ${
+            isSelected ? 'bg-highlight text-black' : 'iconDarkColor'
+          } iconDarkColor overflow-hidden`}
+        >
+          {number}
+        </div>
 
         {/* add some space if there is not segment index */}
         {number === null && <div className="ml-1 h-7"></div>}
@@ -235,9 +230,7 @@ export const DataRow: React.FC<DataRowProps> = ({
             <Tooltip>
               <TooltipTrigger asChild>
                 <span
-                  className={`cursor-default text-base ${
-                    isSelected ? 'text-highlight' : 'text-muted-foreground'
-                  } [overflow:hidden] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]`}
+                  className={`iconDarkColor text-bas cursor-default [overflow:hidden] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]`}
                 >
                   {title}
                 </span>
@@ -251,9 +244,7 @@ export const DataRow: React.FC<DataRowProps> = ({
             </Tooltip>
           ) : (
             <span
-              className={`text-base ${
-                isSelected ? 'text-highlight' : 'text-muted-foreground'
-              } [overflow:hidden] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]`}
+              className={`iconDarkColor text-base [overflow:hidden] [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]`}
             >
               {title}
             </span>
@@ -266,7 +257,7 @@ export const DataRow: React.FC<DataRowProps> = ({
           <Button
             size="icon"
             variant="ghost"
-            className={`h-6 w-6 transition-opacity ${
+            className={`h-6 w-6 text-white transition-opacity ${
               isSelected || !isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
             }`}
             aria-label={isVisible ? 'Hide' : 'Show'}
@@ -282,29 +273,22 @@ export const DataRow: React.FC<DataRowProps> = ({
           {isLocked && !disableEditing && <Icons.Lock className="text-muted-foreground h-6 w-6" />}
 
           {/* Actions Dropdown Menu */}
-          {disableEditing && <div className="h-6 w-6"></div>}
-          {!disableEditing && (
-            <DropdownMenu onOpenChange={open => setIsDropdownOpen(open)}>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  className={`h-6 w-6 transition-opacity ${
-                    isSelected || isDropdownOpen
-                      ? 'opacity-100'
-                      : 'opacity-0 group-hover:opacity-100'
-                  }`}
-                  aria-label="Actions"
-                  onClick={e => e.stopPropagation()} // Prevent row selection on button click
-                >
-                  <Icons.More className="h-6 w-6" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="end"
-                // this was causing issue for auto focus on input dialog
-                onCloseAutoFocus={e => e.preventDefault()}
+          <DropdownMenu onOpenChange={open => setIsDropdownOpen(open)}>
+            <DropdownMenuTrigger asChild>
+              <Button
+                size="icon"
+                variant="ghost"
+                className={`h-6 w-6 text-white transition-opacity ${
+                  isSelected || isDropdownOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                }`}
+                aria-label="Actions"
+                onClick={e => e.stopPropagation()} // Prevent row selection on button click
               >
+                <Icons.More className="h-6 w-6" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {!disableEditing && (
                 <>
                   <DropdownMenuItem onClick={e => handleAction('Rename', e)}>
                     <Icons.Rename className="text-foreground" />
@@ -334,10 +318,10 @@ export const DataRow: React.FC<DataRowProps> = ({
       {/* Details Section */}
       {details && (details.primary?.length > 0 || details.secondary?.length > 0) && (
         <div className="ml-7 px-2 py-2">
-          <div className="text-secondary-foreground flex items-center gap-1 text-base leading-normal">
+          <div className="text-secondary-foreground iconDarkColor flex items-center gap-1 text-base leading-normal">
             {details.primary?.length > 0 && renderDetails(details.primary)}
             {details.secondary?.length > 0 && (
-              <div className="text-muted-foreground ml-auto text-sm">
+              <div className="iconDarkColor ml-auto text-sm">
                 {renderDetails(details.secondary)}
               </div>
             )}

@@ -67,8 +67,9 @@ const InputFilterText = ({
         value={filterValue}
       ></input>
       <span className="absolute inset-y-0 right-0 flex items-center pr-2">
-        <Icons.Clear
-          className={classNames('cursor-pointer', filterValue ? '' : 'hidden')}
+        <Icon
+          name="icon-clear-field"
+          className={classNames('closeIconBtn cursor-pointer', filterValue ? '' : 'hidden')}
           onClick={() => {
             searchInputRef.current.value = '';
             handleFilterTextChanged('');

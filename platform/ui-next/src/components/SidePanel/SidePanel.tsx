@@ -58,7 +58,19 @@ const closeIconWidth = 30;
 const gridHorizontalPadding = 10;
 const tabSpacerWidth = 2;
 
-const baseClasses = 'bg-black border-black justify-start box-content flex flex-col';
+const baseClasses =
+  'transition-all duration-300 ease-in-out mainBgColor border-black justify-start box-content flex flex-col';
+
+const classesMap = {
+  open: {
+    left: `mr-1`,
+    right: `ml-1`,
+  },
+  closed: {
+    left: `mr-2 items-end`,
+    right: `ml-2 items-start`,
+  },
+};
 
 const openStateIconName = {
   left: 'SidePanelCloseLeft',
@@ -111,8 +123,8 @@ const getTabClassNames = (
   isActiveTab: boolean,
   isTabDisabled: boolean
 ) =>
-  classnames('h-[28px] mb-[2px] cursor-pointer text-white bg-black', {
-    'hover:text-primary': !isActiveTab && !isTabDisabled,
+  classnames('h-[28px] mb-[2px] cursor-pointer text-white', {
+    'hover:text-primary-active': !isActiveTab && !isTabDisabled,
     'rounded-l': tabIndex % numColumns === 0,
     'rounded-r': (tabIndex + 1) % numColumns === 0 || tabIndex === numTabs - 1,
   });
@@ -124,8 +136,8 @@ const getTabStyle = (numTabs: number) => {
 };
 
 const getTabIconClassNames = (numTabs: number, isActiveTab: boolean) => {
-  return classnames('h-full w-full flex items-center justify-center', {
-    'bg-customblue-40': isActiveTab,
+  return classnames('h-full w-full flex items-center justify-center activeToggle', {
+    activeToggleBtn: isActiveTab,
     rounded: isActiveTab,
   });
 };
@@ -342,7 +354,7 @@ const SidePanel = ({
     return (
       <div
         className={classnames(
-          'absolute flex cursor-pointer items-center justify-center',
+          'sidebarCloseIcon absolute flex cursor-pointer items-center justify-center',
           side === 'left' ? 'right-0' : 'left-0'
         )}
         style={{ width: `${closeIconWidth}px` }}
@@ -352,7 +364,7 @@ const SidePanel = ({
         data-cy={`side-panel-header-${side}`}
       >
         {React.createElement(Icons[openStateIconName[side]] || Icons.MissingIcon, {
-          className: 'text-primary',
+          className: 'text-primary-active-dark',
         })}
       </div>
     );
@@ -365,19 +377,16 @@ const SidePanel = ({
       <>
         {getCloseIcon()}
         <div className={classnames('flex grow justify-center')}>
-          <div className={classnames('bg-primary-dark text-primary flex flex-wrap')}>
+          <div className={classnames('darkBgForBtns flex flex-wrap')}>
             {tabs.map((tab, tabIndex) => {
               const { disabled } = tab;
               return (
                 <React.Fragment key={tabIndex}>
                   {tabIndex % numCols !== 0 && (
                     <div
-                      className={classnames(
-                        'flex h-[28px] w-[2px] items-center bg-black',
-                        tabSpacerWidth
-                      )}
+                      className={classnames('flex h-[28px] w-[2px] items-center', tabSpacerWidth)}
                     >
-                      <div className="bg-primary-dark h-[20px] w-full"></div>
+                      {/* <div className="h-[20px] w-full"></div> */}
                     </div>
                   )}
                   <Tooltip key={tabIndex}>
@@ -435,7 +444,7 @@ const SidePanel = ({
         onClick={() => updatePanelOpen(!panelOpen)}
       >
         {getCloseIcon()}
-        <span>{tabs[0].label}</span>
+        <span className="cTitleText">{tabs[0].label}</span>
       </div>
     );
   };
@@ -443,12 +452,12 @@ const SidePanel = ({
   const getOpenStateComponent = () => {
     return (
       <>
-        <div className="bg-bkg-med flex h-[40px] flex-shrink-0 select-none rounded-t p-2">
+        <div className="bg-bkg-med flex h-[50px] flex-shrink-0 select-none rounded-t p-2">
           {tabs.length === 1 ? getOneTabComponent() : getTabGridComponent()}
         </div>
         <Separator
           orientation="horizontal"
-          className="bg-black"
+          className="mainBgColor"
           thickness="2px"
         />
       </>
